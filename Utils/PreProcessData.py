@@ -2,7 +2,7 @@ import re
 import nltk
 # nltk.download()
 from nltk.corpus import stopwords
-# from nltk.stem.porter import PorterStemmer
+from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 
 
@@ -16,8 +16,11 @@ def preProcessData(text):
     # to remove punctuations
     text = re.sub(r'[^a-z\s]', '', text)
     # to remove stopwords and stemming the words
-    wNL = WordNetLemmatizer()
     text = text.split()
-    text = [wNL.lemmatize(word) for word in text if not word in set(stopwords.words('english'))]
+    wNL = WordNetLemmatizer()
+    stopWords = ['none']
+    for word in stopwords.words('english'):
+        stopWords.append(word)
+    text = [wNL.lemmatize(word) for word in text if not word in set(stopWords)]
     text = ' '.join(text)
     return text
