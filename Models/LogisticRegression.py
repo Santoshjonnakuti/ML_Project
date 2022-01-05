@@ -1,10 +1,10 @@
-from sklearn.naive_bayes import GaussianNB
+from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import CountVectorizer
 from Utils import Metrics
 
 
 def trainModel(X_train, y_train):
-    classifier = GaussianNB()
+    classifier = LogisticRegression(random_state=0)
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -27,11 +27,11 @@ def predictForNewData(model, test_data):
 
 
 def Algo(X_train, X_test, y_train, y_test, test_data):
-    naiveBayesModel = trainModel(X_train, y_train)
-    y_predicted = predict(naiveBayesModel, X_test)
+    logisticRegressionModel = trainModel(X_train, y_train)
+    y_predicted = predict(logisticRegressionModel, X_test)
     # printing the metrics
     Metrics.findAccuracy(y_test, y_predicted)
     Metrics.getConfusionMatrix(y_test, y_predicted)
     # testing on new data
-    test_y_predicted = predictForNewData(naiveBayesModel, test_data)
+    test_y_predicted = predictForNewData(logisticRegressionModel, test_data)
     # print(test_data.head())
