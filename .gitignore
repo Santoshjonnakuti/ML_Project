@@ -1,3 +1,2 @@
 .idea
-__pycache__
-Utils/__pycache__/__init__.cpython-38.pyc
+/Utils/__pycache__
