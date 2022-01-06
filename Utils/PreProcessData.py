@@ -6,6 +6,7 @@ from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 
 
+# to preprocess the data
 def preProcessData(text):
     # to lower the text
     text = text.lower()

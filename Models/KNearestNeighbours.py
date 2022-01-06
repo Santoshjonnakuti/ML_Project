@@ -3,17 +3,20 @@ from sklearn.feature_extraction.text import CountVectorizer
 from Utils import Metrics
 
 
+# to train the model
 def trainModel(X_train, y_train):
     classifier = KNeighborsClassifier(n_neighbors=2, metric='minkowski', p=2)
     classifier.fit(X_train, y_train)
     return classifier
 
 
+# to predict for the test data
 def predict(model, X_test):
     y_predicted = model.predict(X_test)
     return y_predicted
 
 
+# to predict for test.csv
 def predictForNewData(model, test_data):
     corpus = []
     X = test_data['text_1']
@@ -26,6 +29,7 @@ def predictForNewData(model, test_data):
     return test_data['predicted']
 
 
+# algorithm
 def Algo(X_train, X_test, y_train, y_test, test_data):
     kNNModel = trainModel(X_train, y_train)
     y_predicted = predict(kNNModel, X_test)

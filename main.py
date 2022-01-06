@@ -25,6 +25,7 @@ X_train, X_test, y_train, y_test = TestTrainSplit.getTestTrainSplit(X, y)
 # ------------------------------ Test Data set-----------------------------------------
 # getting the test dataset
 test_data = pd.read_csv('./Data/test.csv')
+
 # preprocessing the Data
 test_data['keyword'].fillna('', inplace=True)
 test_data['location'].fillna('', inplace=True)
@@ -33,7 +34,7 @@ test_data['text_1'] = test_data['text_1'].apply(PreProcessData.preProcessData)
 
 # -------------------------------------------------------------------------------------
 
-# ----------------------------------- Naive Bayes Model--------------------------------
+# ----------------------------------- Naive Bayes -------------------------------------
 
 print('Naive Bayes Algorithm')
 NaiveBayes.Algo(X_train, X_test, y_train, y_test, test_data)

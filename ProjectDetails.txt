@@ -1,0 +1,17 @@
+Project Details
+
+i) Group Details:
+
+Project Title : Know What's Real
+
+DataSet Link : https://www.kaggle.com/c/nlp-getting-started/overview
+
+Group Members:
+
+1. Jonnakuti V V M Sri Datta Santosh      19/11/EC/043 CSE-I
+2. Danam Yashwanth Kumar                  19/11/EC/040 CSE-I
+3. L.S Yashwanth Kumar                    19/11/EC/059 CSE-I
+4. Chokkari Dinesh                        19/11/EC/062 CSE-I
+5. Bathini Hemanth                        19/11/EC/039 CSE-I
+
+Git Repo Link : https://github.com/Santoshjonnakuti/ML_Project

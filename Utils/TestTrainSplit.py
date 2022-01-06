@@ -2,6 +2,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 
 
+# to split the data set into train and test sets
 def getTestTrainSplit(X, y, test_size=0.28, random_state=0):
     corpus = []
     dataFrameLen = len(X)
