@@ -5,7 +5,7 @@ from Utils import Metrics
 
 # to train the model
 def trainModel(X_train, y_train):
-    classifier = KNeighborsClassifier(n_neighbors=2, metric='minkowski', p=2)
+    classifier = KNeighborsClassifier()
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -38,4 +38,4 @@ def Algo(X_train, X_test, y_train, y_test, test_data):
     Metrics.getConfusionMatrix(y_test, y_predicted)
     # testing on new data
     test_y_predicted = predictForNewData(kNNModel, test_data)
-    # print(test_data.head())
+    print(test_data.head(30))

@@ -2,9 +2,6 @@ import pandas as pd
 from Utils import PreProcessData, TestTrainSplit
 from Models import NaiveBayes, LogisticRegression, KNearestNeighbours, DecisionTree
 
-pd.set_option('display.width', 2000)
-pd.set_option('display.max_rows', 1000)
-
 
 # ---------------------------Train Data set--------------------------------------------
 # getting the train dataset

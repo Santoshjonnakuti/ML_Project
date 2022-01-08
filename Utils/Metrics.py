@@ -4,7 +4,7 @@ from sklearn import metrics
 # to find the accuracy of the model
 def findAccuracy(y_test, predicted):
     accuracy = metrics.accuracy_score(y_test, predicted)
-    print('Accuracy : ', str(round(accuracy*100)))
+    print('Accuracy : {:.3f}'.format(accuracy*100))
     return
 
 

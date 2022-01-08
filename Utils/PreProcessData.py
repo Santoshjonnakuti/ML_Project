@@ -1,5 +1,5 @@
 import re
-import nltk
+# import nltk
 # nltk.download()
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -19,9 +19,7 @@ def preProcessData(text):
     # to remove stopwords and stemming the words
     text = text.split()
     wNL = WordNetLemmatizer()
-    stopWords = ['none']
-    for word in stopwords.words('english'):
-        stopWords.append(word)
-    text = [wNL.lemmatize(word) for word in text if not word in set(stopWords)]
+    ps = PorterStemmer()
+    text = [wNL.lemmatize(word) for word in text if word not in set(stopwords.words('english'))]
     text = ' '.join(text)
     return text

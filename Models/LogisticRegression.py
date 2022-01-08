@@ -38,4 +38,4 @@ def Algo(X_train, X_test, y_train, y_test, test_data):
     Metrics.getConfusionMatrix(y_test, y_predicted)
     # testing on new data
     test_y_predicted = predictForNewData(logisticRegressionModel, test_data)
-    # print(test_data.head())
+    print(test_data.head(30))
