@@ -42,3 +42,4 @@ def Algo(X_train, X_test, y_train, y_test, test_data):
     print('Predicting for New Data')
     test_y_predicted = predictForNewData(kNNModel, test_data)
     print(test_data.tail(1))
+    return test_data.tail(1)
