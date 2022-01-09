@@ -87,10 +87,10 @@ def predict():
     # -------------------------------------------------------------------------------------
     loading = False
     return render_template('predict.html', loading=loading,
-                           naiveBayesPredicted=naiveBayesPredicted['predicted'],
-                           logisticRegressionPredicted=logisticRegressionPredicted['predicted'],
-                           kNearestNeighboursPredicted=kNearestNeighboursPredicted['predicted'],
-                           decisionTreePredicted=decisionTreePredicted['predicted'])
+                           naiveBayesPredicted=naiveBayesPredicted.predicted,
+                           logisticRegressionPredicted=logisticRegressionPredicted.predicted,
+                           kNearestNeighboursPredicted=kNearestNeighboursPredicted.predicted,
+                           decisionTreePredicted=decisionTreePredicted.predicted)
 
 
 app.run(debug=True)
