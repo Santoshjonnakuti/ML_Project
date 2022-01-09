@@ -31,11 +31,14 @@ def predictForNewData(model, test_data):
 
 # algorithm
 def Algo(X_train, X_test, y_train, y_test, test_data):
+    print('Training the Logistic Model')
     logisticRegressionModel = trainModel(X_train, y_train)
     y_predicted = predict(logisticRegressionModel, X_test)
     # printing the metrics
+    print('Calculating the Metrics')
     Metrics.findAccuracy(y_test, y_predicted)
     Metrics.getConfusionMatrix(y_test, y_predicted)
     # testing on new data
+    print('Predicting for New Data')
     test_y_predicted = predictForNewData(logisticRegressionModel, test_data)
-    print(test_data.head(30))
+    print(test_data.tail(1))
