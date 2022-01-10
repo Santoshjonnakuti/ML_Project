@@ -31,12 +31,10 @@
         width: 100%;
         justify-content: center;
         align-items: center;
-        background-color: red;
       }
       .container-row2 {
         display: flex;
         flex-grow: 1;
-        background-color: yellow;
       }
       .col-1 {
         width: 50%;
@@ -73,17 +71,32 @@
           <form action="/predict" method="post">
             <div class="mb-3">
               <label for="TweetText" class="form-label">Tweet Text</label>
-              <input type="text" class="form-control" name="TweetText" />
+              <input
+                type="text"
+                class="form-control"
+                name="TweetText"
+                id="TweetText"
+              />
             </div>
             <div class="mb-3">
               <label for="TweetKeyWord" class="form-label">Tweet KeyWord</label>
-              <input type="text" class="form-control" name="TweetKeyWord" />
+              <input
+                type="text"
+                class="form-control"
+                name="TweetKeyWord"
+                id="TweetKeyWord"
+              />
             </div>
             <div class="mb-3">
               <label for="TweetLocation" class="form-label"
                 >Tweet Location</label
               >
-              <input type="text" class="form-control" name="TweetLocation" />
+              <input
+                type="text"
+                class="form-control"
+                name="TweetLocation"
+                id="TweetLocation"
+              />
             </div>
             <br />
             <button type="submit" class="btn btn-primary">Predict</button>

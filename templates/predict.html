@@ -31,19 +31,16 @@
         width: 100%;
         justify-content: center;
         align-items: center;
-        background-color: red;
       }
       .container-row2 {
         display: flex;
         flex-grow: 1;
-        background-color: yellow;
       }
       .container-row3 {
         display: flex;
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        background-color: rebeccapurple;
       }
       .col-1 {
         width: 50%;
@@ -59,8 +56,14 @@
         justify-content: center;
         align-items: center;
       }
+      .result-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
       @media screen and (max-width: 450px) {
-        .main-container {
+        .container-row2 {
           flex-direction: column;
           align-items: center;
         }
@@ -69,59 +72,71 @@
   </head>
   <body>
     {% if loading == True %}
-        <h1>Loading...</h1>
-      {% else %}
-      <div class="container">
-        <div class="container-row1">
-          <h1>Know What's Real</h1>
+    <h1>Loading...</h1>
+    {% else %}
+    <div class="container">
+      <div class="container-row1">
+        <h1>Know What's Real</h1>
+      </div>
+      <div class="container-row2">
+        <div class="col-1">
+          <img src="static/images/logo.png" class="logo" alt="Image" />
         </div>
-        <div class="container-row2">
-          <div class="col-1">
-            <img src="static/images/logo.png" class="logo" alt="Image" />
-          </div>
-          <div class="col-2">
-            <form action="/predict" method="post">
-              <div class="mb-3">
-                <label for="TweetText" class="form-label">Tweet Text</label>
-                <input type="text" class="form-control" name="TweetText" />
-              </div>
-              <div class="mb-3">
-                <label for="TweetKeyWord" class="form-label"
-                  >Tweet KeyWord</label
-                >
-                <input type="text" class="form-control" name="TweetKeyWord" />
-              </div>
-              <div class="mb-3">
-                <label for="TweetLocation" class="form-label"
-                  >Tweet Location</label
-                >
-                <input type="text" class="form-control" name="TweetLocation" />
-              </div>
-              <br />
-              <button type="submit" class="btn btn-primary">Predict</button>
-            </form>
-          </div>
-        </div>
-        <div class="container-row3">
-          <div>
-            <label>Naive Bayes Predicted</label>
-            <label>{{naiveBayesPredicted}}</label>
-          </div>
-          <div>
-            <label>Logistic Regression Predicted</label>
-            <label>{{logisticRegressionPredicted}}</label>
-          </div>
-          <div>
-            <label>K Nearest Neighbours Predicted</label>
-            <label>{{kNearestNeighboursPredicted}}</label>
-          </div>
-          <div>
-            <label>Decision Tree Predicted</label>
-            <label>{{decisionTreePredicted}}</label>
-          </div>
+        <div class="col-2">
+          <form action="/predict" method="post">
+            <div class="mb-3">
+              <label for="TweetText" class="form-label">Tweet Text</label>
+              <input
+                type="text"
+                class="form-control"
+                name="TweetText"
+                id="TweetText"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="TweetKeyWord" class="form-label">Tweet KeyWord</label>
+              <input
+                type="text"
+                class="form-control"
+                name="TweetKeyWord"
+                id="TweetKeyWord"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="TweetLocation" class="form-label"
+                >Tweet Location</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="TweetLocation"
+                id="TweetLocation"
+              />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Predict</button>
+          </form>
         </div>
       </div>
-      {% endif %}
+      <div class="container-row3">
+        <div class="result-row">
+          <label>Naive Bayes Predicted</label>
+          <label>{{naiveBayesPredicted}}</label>
+        </div>
+        <div class="result-row">
+          <label>Logistic Regression Predicted</label>
+          <label>{{logisticRegressionPredicted}}</label>
+        </div>
+        <div class="result-row">
+          <label>K Nearest Neighbours Predicted</label>
+          <label>{{kNearestNeighboursPredicted}}</label>
+        </div>
+        <div class="result-row">
+          <label>Decision Tree Predicted</label>
+          <label>{{decisionTreePredicted}}</label>
+        </div>
+      </div>
     </div>
+    {% endif %}
   </body>
 </html>
