@@ -118,19 +118,35 @@
       <div class="container-row3">
         <div class="result-row">
           <label>Naive Bayes Predicted</label>
-          <label>{{naiveBayesPredicted}}</label>
+          {% if naiveBayesPredicted == 0 %}
+              <label>Not Disaster</label>
+          {% else %}
+              <label>Disaster</label>
+          {% endif %}
         </div>
         <div class="result-row">
           <label>Logistic Regression Predicted</label>
-          <label>{{logisticRegressionPredicted}}</label>
+          {% if logisticRegressionPredicted == 0 %}
+              <label>Not Disaster</label>
+          {% else %}
+              <label>Disaster</label>
+          {% endif %}
         </div>
         <div class="result-row">
           <label>K Nearest Neighbours Predicted</label>
-          <label>{{kNearestNeighboursPredicted}}</label>
+         {% if kNearestNeighboursPredicted == 0 %}
+              <label>Not Disaster</label>
+          {% else %}
+              <label>Disaster</label>
+          {% endif %}
         </div>
         <div class="result-row">
           <label>Decision Tree Predicted</label>
-          <label>{{decisionTreePredicted}}</label>
+          {% if decisionTreePredicted == 0 %}
+              <label>Not Disaster</label>
+          {% else %}
+              <label>Disaster</label>
+          {% endif %}
         </div>
       </div>
     </div>
